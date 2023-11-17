@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xitij 23 | Faculty Student List</title>
+  <link rel="shortcut icon" href="/static/images/xitij.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.bootstrap5.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/4.3.0/css/fixedColumns.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/rowgroup/1.4.1/css/rowGroup.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.4.0/css/fixedHeader.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.tailwindcss.com/3.3.0"></script>
+  <!-- <link href="https://cdn.tailwindcss.com" rel="stylesheet" /> -->
+  <style>
+      a:link,
+      a:visited {
+          color: #000;
+          text-decoration: none;
+      }
+      html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+.btn {
+visibility: visible;
+color: #000;
+}
+  </style>
+</head>
+
+<body class="flex flex-col min-h-screen">
+  
+  <nav
+    class="relative plex w-full flex-wrap items-center justify-between bg-[#FBFBFB] py-2 text-neutral-500 shadow-lg hover:text-neutral-700 focus:text-neutral-700 dark:bg-neutral-600 lg:py-4"
+    data-te-navbar-ref>
+    <div class="flex w-full flex-wrap items-center justify-between px-3 mt-2">
+      <!-- Start-aligned logo -->
+      <div class="flex items-center">
+        <a class="mx-2 mr-6  flex items-center text-neutral-900 hover:text-neutral-900 focus:text-neutral-900 lg:mb-0 lg:mt-0"
+          href="#">
+          <img class="mr-4 logo" src="/static/images/gtusymbol.png" style="height: 90px" alt="TE Logo" loading="lazy" />
+        </a>
+      </div>
+
+      <!-- Center-aligned logo -->
+      <div class="flex items-center justify-center flex-grow">
+        <a class="mx-2  flex items-center text-neutral-900 hover:text-neutral-900 focus:text-neutral-900 lg:mb-0 lg:mt-0"
+          href="#">
+          <img class="ml-4 logo" src="/static/images/xitij.png" style="height: 120px" alt="TE Logo" loading="lazy" />
+        </a>
+      </div>
+
+      <!-- End-aligned logo -->
+      <div class="flex items-center">
+        <a class="mx-2 ml-4 my-1 flex items-center text-neutral-900  hover:text-neutral-900 focus:text-neutral-900 lg:mb-0 lg:mt-0"
+          href="#">
+          <img class="mr-2 logo" src="/static/images/sallogo.png" style="height: 90px" alt="TE Logo" loading="lazy" />
+        </a>
+      </div>
+
+      <!-- Hamburger button for mobile view -->
+      <div class="flex w-full flex-wrap items-center justify-center px-3 pt-4 ">
+
+        <!-- Use justify-end to align the login button to the right -->
+        <div>
+          <!-- Your login button code goes here -->
+          {% if session["faculty_id"] %}
+          <a href="/home" style="text-decoration: none;">
+            <button
+              class="bg-aqua text-black border-0 border-black px-4 py-0 pb-2  pt-2 rounded-md hover:bg-gray-200 hover:text-black">Dashboard
+              </button></a>
+          <a href="/student_list" style="text-decoration: none;">
+            <button
+              class="bg-aqua text-black border-0 border-black px-4 py-0 pb-2  pt-2 rounded-md hover:bg-gray-200 hover:text-black">Student
+              List</button></a>
+          <!-- <a href="/addstudent" style="text-decoration: none;">
+            <button
+              class="bg-aqua text-black border-0 border-black px-4 py-0 pb-2  pt-2 items-center rounded-md hover:bg-gray-200 hover:text-black">Add Student
+              </button></a> -->
+          <!-- <a href="/solo_event" style="text-decoration: none;">
+            <button
+              class="bg-aqua text-black border-0 border-black px-4 py-0 pb-2  pt-2 items-center rounded-md hover:bg-gray-200 hover:text-black">Solo
+              Event</button></a> -->
+          <!-- <a href="/team_event" style="text-decoration: none;">
+            <button
+              class="bg-aqua text-black border-0 border-black px-4 py-0 pb-2 pt-2 items-center rounded-md hover:bg-gray-200 hover:text-black">Team
+              Event</button></a> -->
+          <a href="/logout" style="text-decoration: none;">
+            <button
+              class="bg-aqua text-black border-0 border-black px-4 py-0 pb-2 pt-2 items-center rounded-md hover:bg-gray-200 hover:text-black">Logout</button></a>
+          {% else %}
+          <a href="/login" style="text-decoration: none; justify-content: center; align-items: center; ">
+            <button
+              class="bg-aqua text-black border-0 border-black pt-2 px-4 py-0  pb-2 items-center rounded-md hover:bg-gray-200 hover:text-black">Login</button></a>
+          {% endif %}
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Collapsible navbar container -->
+    <div class="!visible mt-2 hidden flex-grow basis-[100%] items-center lg:mt-0 lg:!flex lg:basis-auto"
+      id="navbarSupportedContent4" data-te-collapse-item></div>
+  </nav>
+
+
+  <br><br>
+
+  <br>
+  <h2 class="text-center" style="font-size: larger; font-weight: 900; font-family:cursive;">Student Added List Table</h2>
+  <!-- <div class="container mx-auto p-4">
+    <div class="container mx-auto p-4">
+      <div class="table100 ver1 m-b-110">
+        <div class="table100-head">
+          <table>
+            <thead>
+              <tr class="row100 head">
+                <th class="cell100 column1" style="text-align: center;">Student Name</th>
+                <th class="cell100 column2" style="text-align: center;">Enrollment</th>
+                <th class="cell100 column3" style="text-align: center;">Current Sem</th>
+                <th class="cell100 column4" style="text-align: center;">Phone Number</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+        <div class="table100-body js-pscroll">
+          <table>
+            <tbody>
+              {% if data %}
+              {% for i in data %}
+              <tr class="row100 body">
+                <td class="cell100 column1" style="text-align: center;">{{ i.name }}</td>
+                <td class="cell100 column2" style="text-align: center;">{{ i.enrollment }}</td>
+                <td class="cell100 column3" style="text-align: center;">{{ i.current_sem }}</td>
+                <td class="cell100 column4" style="text-align: center;">{{ i.phone_no }}</td>
+              </tr>
+              {% endfor %}
+
+              {% else %}
+              <tr>
+                <td class="cell100 column1" style="text-align: center;">-</td>
+                <td class="cell100 column2" style="text-align: center;">-</td>
+                <td class="cell100 column3" style="text-align: center;">-</td>
+                <td class="cell100 column3" style="text-align: center;">-</td>
+              </tr>
+              {% endif %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <div class="container mx-auto p-4">
+    <table id="myTable" class="table table-striped" style="width:100%">
+        <thead>
+            <tr>
+              <th>Student Name</th>
+              <th>Enrollment</th>
+              <th>Current Sem</th>
+              <th>Phone Number</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% if data|length == 0 %}
+            <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+
+            </tr>
+            {% else %}
+            {% for i in data %}
+            <tr>
+              <td>{{ i.name }}</td>
+              <td>{{ i.enrollment }}</td>
+              <td>{{ i.current_sem }}</td>
+              <td>{{ i.phone_no }}</td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+
+
+        </tbody>
+    </table>
+</div>
+
+  <br>
+  <!--Footer container-->
+  <footer class="flex flex-col items-center bg-neutral-100 text-center dark:bg-neutral-600 lg:text-left">
+    <div class="container p-6 text-neutral-800 dark:text-neutral-200">
+      <div class="grid gap-4 lg:grid-cols-3">
+        <div class="mb-6 md:mb-0">
+          <div class="flex" style="display: flex;flex-direction: column;">
+            <img src="/static/images/gtusymbol.png" alt="Logo" class="mb-2 mx-6 my-4 mb:mb-0" width="75%!important" height="100px!important">
+            <img src="/static/images/sallogo.png" alt="Logo" class="mb-2 mx-6 my-4 mb:mb-0" width="75%!important" height="100px!important">
+          </div>
+        </div>
+
+        <div class="mb-6 md:mb-0">
+          <div class="flex" style="display: block; text-align: center;">
+            <p style="font-family:cursive; text-align: center; font-size:xx-large; color: maroon;">About Xitij</p>
+          </div>
+          <div class="flex" style="display: flex;">
+            <p style="font-family:cursive; text-align: justify;">Xitij is the cultural festival of Gujarat Technological University, hosted in the year 2023 at SAL Education Campus. It's a vibrant celebration of art, music, dance, and creativity, bringing together students from across Gujarat for a memorable cultural experience.</p>
+          </div>
+        </div>
+        <div class="mb-6 md:mb-0">
+          <div class="flex" style="display: block; text-align: end;">
+            <p style="font-family:cursive; text-align: end; font-size:xx-large; color: maroon;">Contact Us</p>
+          </div>
+          <div class="flex" style="display: block; text-align: end;">
+            <p style="font-family:cursive; text-align: end;">
+              Contact No: +91 99988 82665 <br>
+              Email: xitij@sal.edu.in
+              
+            </p>
+          </div>
+        </div>
+
+        
+
+</div>
+    </div>
+    </div>
+
+    <div class="w-full bg-neutral-200 p-4 text-center text-neutral-700 dark:bg-neutral-700 dark:text-neutral-200">
+      © 2023 Copyright:
+      <a class="font-semibold text-neutral-600 dark:text-neutral-400" href="/home">SAL Education
+        Campus</a>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.bootstrap5.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.colVis.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+  <script src="https://cdn.datatables.net/fixedcolumns/4.3.0/js/dataTables.fixedColumns.min.js"></script>
+  <script src="https://cdn.datatables.net/fixedheader/3.4.0/js/dataTables.fixedHeader.min.js"></script>
+  <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+  <script src="https://cdn.datatables.net/rowgroup/1.4.1/js/dataTables.rowGroup.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.flash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+  <script>
+    $(document).ready(function () {
+        // Initialize DataTables
+        var table = $('#myTable').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+            'print', 'pdf'
+            ]
+        });
+    });
+</script>
+</body>
+
+</html>

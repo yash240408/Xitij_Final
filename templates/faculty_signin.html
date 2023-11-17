@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.tailwindcss.com" rel="stylesheet" />
+  <title>Xitij 23 | Faculty Sign In</title>
+  <link rel="shortcut icon" href="/static/images/xitij.png" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,300" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
+  <script src="https://cdn.tailwindcss.com/3.3.0"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+</head>
+
+<body class="body bg-white">
+  <!-- Header (You can add your header content here) -->
+  <nav
+    class="relative plex w-full flex-wrap items-center justify-between bg-[#FBFBFB] py-2 text-neutral-500 shadow-lg hover:text-neutral-700 focus:text-neutral-700 dark:bg-neutral-600 lg:py-4"
+    data-te-navbar-ref>
+    <div class="flex w-full flex-wrap items-center justify-between px-3 mt-2">
+      <!-- Start-aligned logo -->
+      <div class="flex items-center">
+        <a class="mx-2 mr-6  flex items-center text-neutral-900 hover:text-neutral-900 focus:text-neutral-900 lg:mb-0 lg:mt-0"
+          href="#">
+          <img class="mr-4 logo" src="/static/images/gtusymbol.png" style="height: 60px" alt="TE Logo" loading="lazy" />
+        </a>
+      </div>
+
+      <!-- Center-aligned logo -->
+      <div class="flex items-center justify-center flex-grow">
+        <a class="mx-2  flex items-center text-neutral-900 hover:text-neutral-900 focus:text-neutral-900 lg:mb-0 lg:mt-0"
+          href="#">
+          <img class="ml-4 logo" src="/static/images/xitij.png" style="height: 60px" alt="TE Logo" loading="lazy" />
+        </a>
+      </div>
+
+      <!-- End-aligned logo -->
+      <div class="flex items-center">
+        <a class="mx-2 ml-4 my-1 flex items-center text-neutral-900  hover:text-neutral-900 focus:text-neutral-900 lg:mb-0 lg:mt-0"
+          href="#">
+          <img class="mr-2 logo" src="/static/images/sallogo.png" style="height: 60px" alt="TE Logo" loading="lazy" />
+        </a>
+      </div>
+
+      <!-- Hamburger button for mobile view -->
+      <div class="flex w-full flex-wrap items-center justify-center px-3 pt-4 ">
+
+        <!-- Use justify-end to align the login button to the right -->
+        <div>
+          <!-- Your login button code goes here -->
+          {% if session["faculty_id"] %}
+          <a href="/home" style="text-decoration: none;">
+            <button
+              class="bg-aqua text-black border-0 border-black px-4 py-0 pb-2  pt-2 rounded-md hover:bg-gray-200 hover:text-black">Dashboard
+              </button></a>
+          <a href="/student_list" style="text-decoration: none;">
+            <button
+              class="bg-aqua text-black border-0 border-black px-4 py-0 pb-2  pt-2 rounded-md hover:bg-gray-200 hover:text-black">Student
+              List</button></a>
+          <a href="/addstudent" style="text-decoration: none;">
+            <button
+              class="bg-aqua text-black border-0 border-black px-4 py-0 pb-2  pt-2 items-center rounded-md hover:bg-gray-200 hover:text-black">Add
+              Student
+            </button></a>
+          <a href="/solo_event" style="text-decoration: none;">
+            <button
+              class="bg-aqua text-black border-0 border-black px-4 py-0 pb-2  pt-2 items-center rounded-md hover:bg-gray-200 hover:text-black">Solo
+              Event</button></a>
+          <a href="/team_event" style="text-decoration: none;">
+            <button
+              class="bg-aqua text-black border-0 border-black px-4 py-0 pb-2 pt-2 items-center rounded-md hover:bg-gray-200 hover:text-black">Team
+              Event</button></a>
+          <a href="/logout" style="text-decoration: none;">
+            <button
+              class="bg-aqua text-black border-0 border-black px-4 py-0 pb-2 pt-2 items-center rounded-md hover:bg-gray-200 hover:text-black">Logout</button></a>
+          {% else %}
+          <a href="/login" style="text-decoration: none; justify-content: center; align-items: center; ">
+            <button
+              class="bg-aqua text-black border-0 border-black pt-2 px-4 py-0  pb-2 items-center rounded-md hover:bg-gray-200 hover:text-black">Login</button></a>
+          {% endif %}
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Collapsible navbar container -->
+    <div class="!visible mt-2 hidden flex-grow basis-[100%] items-center lg:mt-0 lg:!flex lg:basis-auto"
+      id="navbarSupportedContent4" data-te-collapse-item></div>
+  </nav>
+  <br>
+  <!-- Content Container -->
+  <div class="container mx-auto mt-4">
+    <div id="myDIV">
+      <div class="w-[100vw] px-3 sm:px-5 flex items-center justify-center">
+        <div style="background-color: rgb(236, 236, 236);"
+          class="w-full sm:w-1/2 lg:2/3 px-3 bg-white-smoke dark:bg-[#0F172A] px-6 bg-opacity-20 bg-clip-padding backdrop-filter backdrop-blur-sm text-white z-50 py-2 rounded-lg shadow border-black">
+          <div class="w-full flex justify-center text-black text-xl mb-2 md:mb-5">
+            <img src="/static/images/xitij.png" height="30px" width="30px" alt="" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sign In For Xitij 23
+          </div>
+          <!-- Display Messages -->
+          {% if message %}
+          <div
+            class="mb-3 hidden w-full items-center rounded-lg bg-warning-100 px-6 py-5 text-base text-warning-800 data-[te-alert-show]:inline-flex"
+            role="alert" data-te-alert-init data-te-alert-show>
+            <strong class="mr-1" style="color: black">{{ message }}</strong>
+          </div>
+          {% endif %}
+          {% with messages = get_flashed_messages(with_categories=True) %}
+          {% if messages %}
+          <div
+            class="mb-3 hidden w-full items-center rounded-lg bg-{{ messages[0][0] }}-100 px-6 py-5 text-base text-{{ messages[0][0] }}-800 data-[te-alert-show]:inline-flex"
+            role="alert" data-te-alert-init data-te-alert-show>
+            <p><strong class="mr-1" style="color:black;">{{ messages[0][1] }}</strong></p>
+          </div>
+          {% endif %}
+          {%endwith%}
+          <form action="/login" method="post">
+            <div class="mb-3">
+              <label for="email" class="block mb-1 text-md font-medium text-black">Your Email</label>
+              <input type="email" id="email" name="email" placeholder="xitij23@sal.in"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-s rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1 md:p-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                required />
+            </div>
+            <div class="mb-3">
+              <label for="password" class="block mb-1 text-md font-medium text-black">Your Password</label>
+              <input type="password" id="password" placeholder="********" name="password"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-s rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1 md:p-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                required />
+            </div>
+            <div class="mt-2 md:mt-6 w-full flex justify-center">
+              <button type="submit"
+                class="group relative h-12 w-48 overflow-hidden rounded-2xl bg-blue-500 text-lg font-bold text-white">
+                <a href="/login">Login Now</a>
+                <div
+                  class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30">
+                </div>
+              </button>
+            </div>
+          </form>
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <!-- Footer (You can add your footer content here) -->
+  <footer class="bg-white text-white text-center py-2">
+    <!-- Your footer content goes here -->
+    <footer class="flex flex-col items-center bg-neutral-100 text-center dark:bg-neutral-600 lg:text-left">
+      <div class="container p-6 text-neutral-800 dark:text-neutral-200">
+        <div class="grid gap-4 lg:grid-cols-2">
+          <div class="mb-6 md:mb-0">
+            <div class="flex" style="display: flex;">
+              <img src="/static/images/gtusymbol.png" alt="Logo" class="w-25 h-16 mb-2  mx-6 my-4 mb:mb-0">
+              <img src="/static/images/sallogo.png" alt="Logo" class="w-25 h-16 mb-2  mx-6 my-4 mb:mb-0">
+
+            </div>
+          </div>
+
+          <div class="mb-6 md:mb-0">
+
+            <p class="text-xl font-bold pb-2" style="text-align: start;">Xitij Event</p>
+            <div class="flex items-center mb-2 pt-2" style="text-align: start;">
+              <p><span>Contact no: </span>
+                <span><a href="tel:+919998882665"> +919998882665</a></span>
+              </p>
+            </div>
+
+            <div class="flex items-center mb-2 pt-2" style="text-align: start;">
+              <p><span>Email: </span>
+                <span><a href="mailto:xitij@sal.edu.in"> xitij@sal.edu.in</a></span>
+              </p>
+            </div>
+
+            <div class="flex items-center mb-2 pt-2" style="text-align: start;">
+              <p><span>Location: </span>
+                <span><a
+                    href="https://www.google.com/maps?ll=23.083326,72.494835&z=15&t=m&hl=en&gl=IN&mapclient=embed&cid=12123985351497786268">Opp.
+                    Science city, <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sola
+                    Bhadaj Road,<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ahmedabad,Gujarat-380060.</a></span>
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+      </div>
+
+      <!--Copyright section-->
+      <div class="w-full bg-neutral-200 p-4 text-center text-neutral-700 dark:bg-neutral-700 dark:text-neutral-200">
+        © 2023 Copyright:
+        <a class="font-semibold text-neutral-600 dark:text-neutral-400" href="/home">SAL Education
+          Campus</a>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+</body>
+
+</html>

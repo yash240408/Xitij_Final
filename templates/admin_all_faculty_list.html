@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xitij 23 | Admin Portal</title>
+  <link rel="shortcut icon" href="/static/images/xitij.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.bootstrap5.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/4.3.0/css/fixedColumns.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/rowgroup/1.4.1/css/rowGroup.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.4.0/css/fixedHeader.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.tailwindcss.com/3.3.0"></script>
+  <!-- <link href="https://cdn.tailwindcss.com" rel="stylesheet" /> -->
+  <style>
+    a:link,
+    a:visited {
+      color: #000;
+      text-decoration: none;
+    }
+
+    html,
+    body {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    .btn {
+      visibility: visible;
+      color: #000;
+    }
+  </style>
+</head>
+
+<body class="body bg-white">
+  <nav
+    class="relative plex w-full flex-wrap items-center justify-between bg-[#FBFBFB] py-2 text-neutral-500 shadow-lg hover:text-neutral-700 focus:text-neutral-700 dark:bg-neutral-600 lg:py-4"
+    data-te-navbar-ref style="border-radius: 0px 0px 40px 40px;background: #fbfbfb;">
+    <div class="flex w-full flex-wrap items-center justify-between px-3 mt-2">
+      <div class="flex items-center">
+        <a class="mx-2 mr-6  flex items-center text-neutral-900 hover:text-neutral-900 focus:text-neutral-900 lg:mb-0 lg:mt-0"
+          href="#">
+          <img class="mr-4 logo" src="/static/images/gtusymbol.png" style="height: 90px" alt="TE Logo" loading="lazy" />
+        </a>
+      </div>
+
+
+      <div class="flex items-center justify-center flex-grow">
+        <a class="mx-2  flex items-center text-neutral-900 hover:text-neutral-900 focus:text-neutral-900 lg:mb-0 lg:mt-0"
+          href="#">
+          <img class="ml-4 logo" src="/static/images/xitij.png" style="height: 120px" alt="TE Logo" loading="lazy" />
+        </a>
+      </div>
+
+
+      <div class="flex items-center">
+        <a class="mx-2 ml-4 my-1 flex items-center text-neutral-900 hover:text-neutral-900 focus:text-neutral-900 lg:mb-0 lg:mt-0"
+          href="#">
+          <img class="mr-2 logo" src="/static/images/sallogo.png" style="height: 90px" alt="TE Logo" loading="lazy" />
+        </a>
+      </div>
+
+      <div class="flex w-full flex-wrap items-center justify-center px-3 pt-4 ">
+
+        <div>
+          <a href="/admin_only" style="text-decoration: none;">
+            <button
+              class="bg-aqua text-black border-0 border-black px-4 py-0 pb-2 pt-2 items-center rounded-md hover:bg-gray-200 hover:text-black">Dashboard</button></a>
+
+          </a>
+
+          <a href="/logout" style="text-decoration: none;">
+            <button
+              class="bg-aqua text-black border-0 border-black px-4 py-0 pb-2 pt-2 items-center rounded-md hover:bg-gray-200 hover:text-black">Logout</button></a>
+
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="!visible mt-2 hidden flex-grow basis-[100%] items-center lg:mt-0 lg:!flex lg:basis-auto"
+      id="navbarSupportedContent4" data-te-collapse-item></div>
+  </nav>
+
+  <br>
+  <p class="text-center" style="font-size:30px;"><b>Total Faculty List</b></p>
+
+  <hr> <br>
+  <div class="container mx-auto p-4">
+    <table id="myTable" class="table table-striped" style="width:100%">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>College Name</th>
+          <th>Faculty Details</th>
+          <th>Faculty Email</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        {% if data|length == 0 %}
+        <tr>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+
+        </tr>
+        {% else %}
+        {% for i in data %}
+        <tr>
+          <td style="text-align: center;"><b>{{loop.index}}</b></td>
+
+          <td>{{ i.college_name }}</td>
+          <td><b>{{ i.faculty_name }}</b> <br> ({{ i.faculty_phone_number }})</td>
+          <td>{{ i.faculty_email }} </td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+
+
+      </tbody>
+    </table>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.bootstrap5.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.colVis.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+  <script src="https://cdn.datatables.net/fixedcolumns/4.3.0/js/dataTables.fixedColumns.min.js"></script>
+  <script src="https://cdn.datatables.net/fixedheader/3.4.0/js/dataTables.fixedHeader.min.js"></script>
+  <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+  <script src="https://cdn.datatables.net/rowgroup/1.4.1/js/dataTables.rowGroup.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.flash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+  <script>
+    $(document).ready(function () {
+      // Initialize DataTables
+      var table = $('#myTable').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+          'print', 'excel', 'pdf', 'csv'
+        ]
+      });
+    });
+  </script>
+</body>
+
+</html>

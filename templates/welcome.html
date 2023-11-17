@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xitij 23 | Homepage</title>
+  <link rel="shortcut icon" href="/static/images/xitij.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.tailwindcss.com/3.3.0"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/static/footer_all.css">
+  <style>
+    a:link,
+    a:visited {
+      color: #000;
+      /* Set the color to the desired color (e.g., black) */
+      text-decoration: none;
+      /* Remove underline, if desired */
+
+    }
+
+    @media (max-width:748px) {
+      .logo {
+        height: 20px;
+        width: 60px;
+      }
+
+      .map {
+        width: 350px;
+        height: 350px;
+        padding-top: 20px;
+      }
+
+    }
+    body {
+ background-image: url("https://www.veronaimpex.com/veronaimpex/static/assets/images/xitijbackground.jpg");
+ /* background-repeat: no-repeat; */
+  background-attachment: fixed;
+  /* background-position: center; */
+ /* background-color: #cccccc; */
+}
+  </style>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        fontFamily: {
+          sans: ["Roboto", "sans-serif"],
+          body: ["Roboto", "sans-serif"],
+          mono: ["ui-monospace", "monospace"],
+        },
+      },
+      corePlugins: {
+        preflight: false,
+      },
+    };
+    // Check the screen width and remove the class if it's below 768 pixels
+
+  </script>
+
+
+</head>
+
+<body>
+
+  <nav
+    class="relative plex w-full flex-wrap items-center justify-between bg-[#FBFBFB] py-2 text-neutral-500 shadow-lg hover:text-neutral-700 focus:text-neutral-700 dark:bg-neutral-600 lg:py-4"
+    data-te-navbar-ref style="border-radius: 0px 0px 50px 50px">
+    <div class="flex w-full flex-wrap items-center justify-between px-3 mt-2">
+      <!-- Start-aligned logo -->
+      <div class="flex items-center">
+        <a class="mx-2 mr-6  flex items-center text-neutral-900 hover:text-neutral-900 focus:text-neutral-900 lg:mb-0 lg:mt-0"
+          href="#">
+          <img class="mr-4 logo" src="/static/images/gtusymbol.png" style="height: 90px" alt="TE Logo" loading="lazy" />
+        </a>
+      </div>
+
+      <!-- Center-aligned logo -->
+      <div class="flex items-center justify-center flex-grow">
+        <a class="mx-2  flex items-center text-neutral-900 hover:text-neutral-900 focus:text-neutral-900 lg:mb-0 lg:mt-0"
+          href="#">
+          <img class="ml-4 logo" src="/static/images/xitij.png" style="height: 120px" alt="TE Logo" loading="lazy" />
+        </a>
+      </div>
+
+      <!-- End-aligned logo -->
+      <div class="flex items-center">
+        <a class="mx-2 ml-4 my-1 flex items-center text-neutral-900 hover:text-neutral-900 focus:text-neutral-900 lg:mb-0 lg:mt-0"
+          href="#">
+          <img class="mr-2 logo" src="/static/images/sallogo.png" style="height: 90px" alt="TE Logo" loading="lazy" />
+        </a>
+      </div>
+    </div>
+
+    <!-- Collapsible navbar container -->
+    <div class="!visible mt-2 hidden flex-grow basis-[100%] items-center lg:mt-0 lg:!flex lg:basis-auto"
+      id="navbarSupportedContent4" data-te-collapse-item></div>
+  </nav>
+
+
+  <div id="carouselExampleCrossfade" class="relative navbar1  slider container mx-auto mt-4 mb-4 pt-6 "
+    data-te-carousel-init data-te-ride="carousel">
+    <!--Carousel indicators-->
+    <div class="absolute inset-x-0 bottom-0 z-[2] mx-[15%] mb-4 flex list-none justify-center p-0"
+      data-te-carousel-indicators>
+      <button type="button" data-te-target="#carouselExampleCrossfade" data-te-slide-to="0" data-te-carousel-active
+        class="mx-[3px] mb-[15px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-te-target="#carouselExampleCrossfade" data-te-slide-to="1"
+        class="mx-[3px] mb-[15px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+        aria-label="Slide 2"></button>
+      <button type="button" data-te-target="#carouselExampleCrossfade" data-te-slide-to="2"
+        class="mx-[3px] mb-[15px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+        aria-label="Slide 3"></button>
+      <button type="button" data-te-target="#carouselExampleCrossfade" data-te-slide-to="3"
+        class="mx-[3px] mb-[15px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+        aria-label="Slide 4"></button>
+      <button type="button" data-te-target="#carouselExampleCrossfade" data-te-slide-to="4"
+        class="mx-[3px] mb-[15px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+        aria-label="Slide 7"></button>
+      <button type="button" data-te-target="#carouselExampleCrossfade" data-te-slide-to="5"
+        class="mx-[3px] mb-[15px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+        aria-label="Slide 8"></button>
+      <button type="button" data-te-target="#carouselExampleCrossfade" data-te-slide-to="6"
+        class="mx-[3px] mb-[15px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+        aria-label="Slide 5"></button>
+      <button type="button" data-te-target="#carouselExampleCrossfade" data-te-slide-to="7"
+        class="mx-[3px] mb-[15px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+        aria-label="Slide 6"></button>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+    </div>
+
+    <!--Carousel items-->
+    <div class="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
+      <!--First item-->
+      <div
+        class="relative float-left -mr-[100%] w-full !transform-none opacity-0 transition-opacity duration-[600ms] ease-in-out motion-reduce:transition-none"
+        data-te-carousel-fade data-te-carousel-item data-te-carousel-active>
+        <img src="/static/images/1.jpeg" class="block w-full p-4" style="height: 650px; transform :scale(1.15)"
+          alt="Wild Landscape" />
+      </div>
+      <!--Second item-->
+      <div
+        class="relative float-left -mr-[100%] hidden w-full !transform-none opacity-0 transition-opacity duration-[600ms] ease-in-out motion-reduce:transition-none"
+        data-te-carousel-fade data-te-carousel-item>
+        <img src="/static/images/2.jpeg" class="block w-full p-4" style="height: 650px; transform :scale(1.15)"
+          alt="Camera" />
+      </div>
+      <div
+        class="relative float-left -mr-[100%] hidden w-full !transform-none opacity-0 transition-opacity duration-[600ms] ease-in-out motion-reduce:transition-none"
+        data-te-carousel-fade data-te-carousel-item>
+        <img src="/static/images/3.jpeg" class="block w-full p-4" style="height: 650px; transform :scale(1.15)"
+          alt="Exotic Fruits" />
+      </div>
+      <div
+        class="relative float-left -mr-[100%] hidden w-full !transform-none opacity-0 transition-opacity duration-[600ms] ease-in-out motion-reduce:transition-none"
+        data-te-carousel-fade data-te-carousel-item>
+        <img src="/static/images/4.jpeg" class="block w-full p-4" style="height: 650px; transform :scale(1.15)"
+          alt="Exotic Fruits" />
+      </div>
+      <div
+        class="relative float-left -mr-[100%] hidden w-full !transform-none opacity-0 transition-opacity duration-[600ms] ease-in-out motion-reduce:transition-none"
+        data-te-carousel-fade data-te-carousel-item>
+        <img src="/static/images/7.jpeg" class="block w-full p-4" style="height: 650px; transform :scale(1.15)"
+          alt="Exotic Fruits" />
+      </div>
+      <div
+        class="relative float-left -mr-[100%] hidden w-full !transform-none opacity-0 transition-opacity duration-[600ms] ease-in-out motion-reduce:transition-none"
+        data-te-carousel-fade data-te-carousel-item>
+        <img src="/static/images/8.jpeg" class="block w-full p-4" style="height: 650px; transform :scale(1.15)"
+          alt="Exotic Fruits" />
+      </div>
+      <div
+        class="relative float-left -mr-[100%] hidden w-full !transform-none opacity-0 transition-opacity duration-[600ms] ease-in-out motion-reduce:transition-none"
+        data-te-carousel-fade data-te-carousel-item>
+        <img src="/static/images/5.JPG" class="block w-full p-4" style="height: 650px; transform :scale(1.15)"
+          alt="Exotic Fruits" />
+      </div>
+      <div
+        class="relative float-left -mr-[100%] hidden w-full !transform-none opacity-0 transition-opacity duration-[600ms] ease-in-out motion-reduce:transition-none"
+        data-te-carousel-fade data-te-carousel-item>
+        <img src="/static/images/6.JPG" class="block w-full p-4" style="height: 650px; transform :scale(1.15)"
+          alt="Exotic Fruits" />
+      </div>
+    </div>
+
+    <!--Carousel controls - prev item-->
+    <button
+      class="absolute bottom-0 left-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
+      type="button" data-te-target="#carouselExampleCrossfade" data-te-slide="prev">
+      <span class="inline-block h-8 w-8">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+          class="h-6 w-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+        </svg>
+      </span>
+      <span
+        class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Previous</span>
+    </button>
+    <!--Carousel controls - next item-->
+    <button
+      class="absolute bottom-0 right-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
+      type="button" data-te-target="#carouselExampleCrossfade" data-te-slide="next">
+      <span class="inline-block h-8 w-8">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+          class="h-6 w-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+        </svg>
+      </span>
+      <span
+        class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Next</span>
+    </button>
+  </div>
+
+
+
+
+
+  <br>
+  <br>
+  <br>
+  <!-- title  -->
+  <div class="flex justify-center mt-4 items-center">
+    <h1 class="text-4xl font-bold">Music Events</h1>
+  </div>
+
+  <!--card -->
+  <div class="row row-cols-1 row-cols-md-3 g-4 container mx-auto mt-2 mb-4">
+    {% for i in music_data %}
+    <div class="col">
+      <div class="card h-100"
+        style="margin: 0px 10px 10px 0px; border-radius: 4.25%; box-shadow: 0px 3px 19px rgba(44, 37, 37, 0.621);">
+        <img src="https://hetpatel.in{{i.event_image}}" style="border-radius: 4.25%;" class="card-img-top" height="200px"
+          width="300px" alt="...">
+        <div class="card-body">
+          <div class="title-box" style="font-weight: 525; border-radius: 7%;">
+            <h1 class="card-title mt-2" style="text-align: center;"><b>{{i.event_name}}</b></h1>
+          </div>
+          <br>
+          <p class="card-text" style="text-align: justify;">{{ i.events_details }}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <br><br>
+  <hr style="width: 75%; height:2px ;margin: 0 auto; border: none; border-top: 2px solid #000;">
+  <!-- title  -->
+  <div class="flex justify-center mt-4 items-center">
+    <h1 class="text-4xl font-bold">Dance Events</h1>
+  </div>
+
+  <!--card -->
+  <div class="row row-cols-1 row-cols-md-3 g-4 container mx-auto mt-2 mb-4">
+    {% for i in dance_data %}
+    <div class="col">
+      <div class="card h-100"
+        style="margin: 0px 10px 10px 0px; border-radius: 4.25%; box-shadow: 0px 3px 19px rgba(44, 37, 37, 0.621);">
+        <img src="https://hetpatel.in{{i.event_image}}" style="border-radius: 4.25%;" class="card-img-top" height="200px"
+          width="300px" alt="...">
+        <div class="card-body">
+          <div class="title-box" style="font-weight: 525; border-radius: 7%; ">
+            <h1 class="card-title mt-2" style="text-align: center;"><b>{{i.event_name}}</b></h1>
+          </div>
+          <br>
+          <p class="card-text" style="text-align: justify;">{{ i.events_details }}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <br><br>
+  <hr style="width: 75%; height:2px ;margin: 0 auto; border: none; border-top: 2px solid #000;">
+  <!-- title  -->
+  <div class="flex justify-center mt-4 items-center">
+    <h1 class="text-4xl font-bold">Literature Events</h1>
+  </div>
+
+  <!--card -->
+  <div class="row row-cols-1 row-cols-md-3 g-4 container mx-auto mt-2 mb-4">
+    {% for i in litertaure_data %}
+    <div class="col">
+      <div class="card h-100"
+        style="margin: 0px 10px 10px 0px; border-radius: 4.25%; box-shadow: 0px 3px 19px rgba(44, 37, 37, 0.621);">
+        <img src="https://hetpatel.in{{i.event_image}}" style="border-radius: 4.25%;" class="card-img-top" height="200px"
+          width="300px" alt="...">
+        <div class="card-body">
+          <div class="title-box" style="font-weight: 525; border-radius: 7%;">
+            <h1 class="card-title mt-2" style="text-align: center;"><b>{{i.event_name}}</b></h1>
+          </div>
+          <br>
+          <p class="card-text" style="text-align: justify;">{{ i.events_details }}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <br><br>
+  <hr style="width: 75%; height:2px ;margin: 0 auto; border: none; border-top: 2px solid #000;">
+  <!-- title  -->
+  <div class="flex justify-center mt-4 items-center">
+    <h1 class="text-4xl font-bold">Theatre Events</h1>
+  </div>
+
+  <!--card -->
+  <div class="row row-cols-1 row-cols-md-3 g-4 container mx-auto mt-2 mb-4">
+    {% for i in theatre_data %}
+    <div class="col">
+      <div class="card h-100"
+        style="margin: 0px 10px 10px 0px; border-radius: 4.25%; box-shadow: 0px 3px 19px rgba(44, 37, 37, 0.621);">
+        <img src="https://hetpatel.in{{i.event_image}}" style="border-radius: 4.25%;" class="card-img-top" height="200px"
+          width="300px" alt="...">
+        <div class="card-body">
+          <div class="title-box" style="font-weight: 525; border-radius: 7%;">
+            <h1 class="card-title mt-2" style="text-align: center;"><b>{{i.event_name}}</b></h1>
+          </div>
+          <br>
+          <p class="card-text" style="text-align: justify;">{{ i.events_details }}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <br><br>
+  <hr style="width: 75%; height:2px ;margin: 0 auto; border: none; border-top: 2px solid #000;">
+
+
+  <!-- title  -->
+  <div class="flex justify-center mt-4 items-center">
+    <h1 class="text-4xl font-bold">Fine Arts Events</h1>
+  </div>
+
+  <!--card -->
+  <div class="row row-cols-1 row-cols-md-3 g-4 container mx-auto mt-2 mb-4">
+    {% for i in fine_arts_data %}
+    <div class="col">
+      <div class="card h-100"
+        style="margin: 0px 10px 10px 0px; border-radius: 4.25%; box-shadow: 0px 3px 19px rgba(44, 37, 37, 0.621);">
+        <img src="https://hetpatel.in{{i.event_image}}" style="border-radius: 4.25%;" class="card-img-top" height="200px"
+          width="300px" alt="...">
+        <div class="card-body">
+          <div class="title-box" style="font-weight: 525; border-radius: 7%;">
+            <h1 class="card-title mt-2" style="text-align: center;"><b>{{i.event_name}}</b></h1>
+          </div>
+          <br>
+          <p class="card-text" style="text-align: justify;">{{ i.events_details }}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <br><br>
+  <div class="flex justify-center mt-4 items-center ">
+    <h2 class="text-4xl font-bold ml-1 location_sal">LOCATION OF SAL EDUCATION</h2><br><br>
+  </div>
+  <center><iframe class="map"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3670.3695793473685!2d72.49303297523674!3d23.08356297913095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9ce9f10b8a91%3A0xa8410c710a10a39c!2sSAL%20EDUCATION!5e0!3m2!1sen!2sin!4v1698319986119!5m2!1sen!2sin"
+      width="1000px" height="550px" style="border:0;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe></center>
+  <br><br>
+  <style>
+    .custom-height-60 {
+      height: 60px;
+    }
+  </style>
+
+  <footer class="flex flex-col items-center bg-neutral-100 text-center dark:bg-neutral-600 lg:text-left">
+    <div class="container p-6 text-neutral-800 dark:text-neutral-200">
+      <div class="grid gap-4 lg:grid-cols-3">
+        <div class="mb-6 md:mb-0">
+          <div class="flex" style="display: flex;flex-direction: column;">
+            <img src="/static/images/gtusymbol.png" alt="Logo" class="mb-2 mx-6 my-4 mb:mb-0" width="75%!important" height="100px!important">
+            <img src="/static/images/sallogo.png" alt="Logo" class="mb-2 mx-6 my-4 mb:mb-0" width="75%!important" height="100px!important">
+          </div>
+        </div>
+
+        <div class="mb-6 md:mb-0">
+          <div class="flex" style="display: block; text-align: center;">
+            <p style="font-family:cursive; text-align: center; font-size:xx-large; color: maroon;">About Xitij</p>
+          </div>
+          <div class="flex" style="display: flex;">
+            <p style="font-family:cursive; text-align: justify;">Xitij is the cultural festival of Gujarat Technological University, hosted in the year 2023 at SAL Education Campus. It's a vibrant celebration of art, music, dance, and creativity, bringing together students from across Gujarat for a memorable cultural experience.</p>
+          </div>
+        </div>
+        <div class="mb-6 md:mb-0">
+          <div class="flex" style="display: block; text-align: end;">
+            <p style="font-family:cursive; text-align: end; font-size:xx-large; color: maroon;">Contact Us</p>
+          </div>
+          <div class="flex" style="display: block; text-align: end;">
+            <p style="font-family:cursive; text-align: end;">
+              Contact No: +91 99988 82665 <br>
+              Email: xitij@sal.edu.in
+              
+            </p>
+          </div>
+        </div>
+
+        
+
+</div>
+    </div>
+    </div>
+
+    <div class="w-full bg-neutral-200 p-4 text-center text-neutral-700 dark:bg-neutral-700 dark:text-neutral-200">
+      © 2023 Copyright:
+      <a class="font-semibold text-neutral-600 dark:text-neutral-400" href="/home">SAL Education
+        Campus</a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+
+</body>
+
+</html>
