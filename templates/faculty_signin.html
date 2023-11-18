@@ -45,45 +45,7 @@
         </a>
       </div>
 
-      <!-- Hamburger button for mobile view -->
-      <div class="flex w-full flex-wrap items-center justify-center px-3 pt-4 ">
 
-        <!-- Use justify-end to align the login button to the right -->
-        <div>
-          <!-- Your login button code goes here -->
-          {% if session["faculty_id"] %}
-          <a href="/home" style="text-decoration: none;">
-            <button
-              class="bg-aqua text-black border-0 border-black px-4 py-0 pb-2  pt-2 rounded-md hover:bg-gray-200 hover:text-black">Dashboard
-              </button></a>
-          <a href="/student_list" style="text-decoration: none;">
-            <button
-              class="bg-aqua text-black border-0 border-black px-4 py-0 pb-2  pt-2 rounded-md hover:bg-gray-200 hover:text-black">Student
-              List</button></a>
-          <a href="/addstudent" style="text-decoration: none;">
-            <button
-              class="bg-aqua text-black border-0 border-black px-4 py-0 pb-2  pt-2 items-center rounded-md hover:bg-gray-200 hover:text-black">Add
-              Student
-            </button></a>
-          <a href="/solo_event" style="text-decoration: none;">
-            <button
-              class="bg-aqua text-black border-0 border-black px-4 py-0 pb-2  pt-2 items-center rounded-md hover:bg-gray-200 hover:text-black">Solo
-              Event</button></a>
-          <a href="/team_event" style="text-decoration: none;">
-            <button
-              class="bg-aqua text-black border-0 border-black px-4 py-0 pb-2 pt-2 items-center rounded-md hover:bg-gray-200 hover:text-black">Team
-              Event</button></a>
-          <a href="/logout" style="text-decoration: none;">
-            <button
-              class="bg-aqua text-black border-0 border-black px-4 py-0 pb-2 pt-2 items-center rounded-md hover:bg-gray-200 hover:text-black">Logout</button></a>
-          {% else %}
-          <a href="/login" style="text-decoration: none; justify-content: center; align-items: center; ">
-            <button
-              class="bg-aqua text-black border-0 border-black pt-2 px-4 py-0  pb-2 items-center rounded-md hover:bg-gray-200 hover:text-black">Login</button></a>
-          {% endif %}
-          </a>
-        </div>
-      </div>
     </div>
 
     <!-- Collapsible navbar container -->
@@ -147,60 +109,54 @@
     </div>
   </div>
   <br>
+  <style>
+    .custom-height-60 {
+      height: 60px;
+    }
+  </style>
   <!-- Footer (You can add your footer content here) -->
-  <footer class="bg-white text-white text-center py-2">
-    <!-- Your footer content goes here -->
-    <footer class="flex flex-col items-center bg-neutral-100 text-center dark:bg-neutral-600 lg:text-left">
-      <div class="container p-6 text-neutral-800 dark:text-neutral-200">
-        <div class="grid gap-4 lg:grid-cols-2">
-          <div class="mb-6 md:mb-0">
-            <div class="flex" style="display: flex;">
-              <img src="/static/images/gtusymbol.png" alt="Logo" class="w-25 h-16 mb-2  mx-6 my-4 mb:mb-0">
-              <img src="/static/images/sallogo.png" alt="Logo" class="w-25 h-16 mb-2  mx-6 my-4 mb:mb-0">
-
-            </div>
+  <footer class="flex flex-col items-center bg-neutral-100 text-center dark:bg-neutral-600 lg:text-left">
+    <div class="container p-6 text-neutral-800 dark:text-neutral-200">
+      <div class="grid gap-4 lg:grid-cols-3">
+        <div class="mb-6 md:mb-0">
+          <div class="flex" style="display: flex;flex-direction: column;">
+            <img src="/static/images/gtusymbol.png" alt="Logo" class="mb-2 mx-6 my-4 mb:mb-0" width="75%!important" height="100px!important">
+            <img src="/static/images/sallogo.png" alt="Logo" class="mb-2 mx-6 my-4 mb:mb-0" width="75%!important" height="100px!important">
           </div>
-
-          <div class="mb-6 md:mb-0">
-
-            <p class="text-xl font-bold pb-2" style="text-align: start;">Xitij Event</p>
-            <div class="flex items-center mb-2 pt-2" style="text-align: start;">
-              <p><span>Contact no: </span>
-                <span><a href="tel:+919998882665"> +919998882665</a></span>
-              </p>
-            </div>
-
-            <div class="flex items-center mb-2 pt-2" style="text-align: start;">
-              <p><span>Email: </span>
-                <span><a href="mailto:xitij@sal.edu.in"> xitij@sal.edu.in</a></span>
-              </p>
-            </div>
-
-            <div class="flex items-center mb-2 pt-2" style="text-align: start;">
-              <p><span>Location: </span>
-                <span><a
-                    href="https://www.google.com/maps?ll=23.083326,72.494835&z=15&t=m&hl=en&gl=IN&mapclient=embed&cid=12123985351497786268">Opp.
-                    Science city, <br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sola
-                    Bhadaj Road,<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ahmedabad,Gujarat-380060.</a></span>
-              </p>
-            </div>
-
-          </div>
-
         </div>
-      </div>
-      </div>
 
-      <!--Copyright section-->
-      <div class="w-full bg-neutral-200 p-4 text-center text-neutral-700 dark:bg-neutral-700 dark:text-neutral-200">
-        © 2023 Copyright:
-        <a class="font-semibold text-neutral-600 dark:text-neutral-400" href="/home">SAL Education
-          Campus</a>
-      </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+        <div class="mb-6 md:mb-0">
+          <div class="flex" style="display: block; text-align: center;">
+            <p style="font-family:cursive; text-align: center; font-size:xx-large; color: maroon;">About Xitij</p>
+          </div>
+          <div class="flex" style="display: flex;">
+            <p style="font-family:cursive; text-align: justify;">Xitij is the cultural festival of Gujarat Technological University, hosted in the year 2023 at SAL Education Campus. It's a vibrant celebration of art, music, dance, and creativity, bringing together students from across Gujarat for a memorable cultural experience.</p>
+          </div>
+        </div>
+        <div class="mb-6 md:mb-0">
+          <div class="flex" style="display: block; text-align: end;">
+            <p style="font-family:cursive; text-align: end; font-size:xx-large; color: maroon;">Contact Us</p>
+          </div>
+          <div class="flex" style="display: block; text-align: end;">
+            <p style="font-family:cursive; text-align: end;">
+              Contact No: +91 99988 82665 <br>
+              Email: xitij@sal.edu.in
+              
+            </p>
+          </div>
+        </div>
+
+        
+
+</div>
+    </div>
+    </div>
+
+    <div class="w-full bg-neutral-200 p-4 text-center text-neutral-700 dark:bg-neutral-700 dark:text-neutral-200">
+      © 2023 Copyright:
+      <a class="font-semibold text-neutral-600 dark:text-neutral-400" href="/home">SAL Education
+        Campus</a>
+    </div>
   </footer>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

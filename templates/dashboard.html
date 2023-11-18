@@ -139,11 +139,11 @@
   <div class="flex-1 container mx-auto py-4">
     <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-2">
       <div class="bg-white border p-4 rounded aspect-square">
-        <h2 class="text-xl font-semibold" style="text-align: center;">Total Student</h2>
+        <h2 class="text-xl font-semibold" style="text-align: center;">Total Student Registered</h2>
         <p style="text-align: center;">{{ student_register }}</p>
       </div>
       <div class="bg-white border p-4 rounded aspect-square">
-        <h2 class="text-xl font-semibold" style="text-align: center;">Total Event</h2>
+        <h2 class="text-xl font-semibold" style="text-align: center;">Total Event Participated</h2>
         <p style="text-align: center;">{{ total_events }}</p>
       </div>
       <div class="bg-white border p-4 rounded aspect-square">
@@ -335,36 +335,16 @@
         buttons: [
           {
             extend: 'print',
-            title: 'Xitij | Team Table Data',
+            title: 'Xitij | All Event Data',
           },
           {
             extend: 'pdf',
-            title: 'Xitij | Team Table Data',
+            title: 'Xitij | All Event Data',
           }
         ]
       });
     });
 </script>
-
-  <script>
-    $(document).ready(function () {
-      // Initialize DataTables with custom title
-      var table = $('#soloTable').DataTable({
-        dom: 'Bfrtip',
-        buttons: [
-          {
-            extend: 'print',
-            title: 'Xitij | Solo Table Data',
-          },
-          {
-            extend: 'pdf',
-            title: 'Xitij | Solo Table Data',
-          }
-        ]
-      });
-    });
-</script>
-
 </body>
 
 </html>
