@@ -7,7 +7,7 @@ from datetime import timedelta
 
 # Flask App Initialize
 app = Flask(__name__)
-app.secret_key = "bdsvjdv32543ub345"
+app.secret_key = "anykey"
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 app.config['SESSION_REFRESH_EACH_REQUEST'] = True
 
@@ -15,9 +15,9 @@ app.config['MAIL_SERVER'] = 'smtp.gmail.com'  # Your SMTP server
 app.config['MAIL_PORT'] = 465  # Port for your SMTP server
 app.config['MAIL_USE_TLS'] = False  # Use TLS (True or False)
 app.config['MAIL_USE_SSL'] = True  # Use SSL (True or False)
-app.config['MAIL_USERNAME'] = 'xitij@sal.edu.in'  # Your email username
-app.config['MAIL_PASSWORD'] = 'fmkmosbnfbllkuvn'  # Your email password
-app.config['MAIL_DEFAULT_SENDER'] = 'xitij@sal.edu.in'  # Default sender email address
+app.config['MAIL_USERNAME'] = 'mail@mail.com'  # Your email username
+app.config['MAIL_PASSWORD'] = '12345'  # Your email password
+app.config['MAIL_DEFAULT_SENDER'] = 'mail@mail.com'  # Default sender email address
 
 app.permanent_session_lifetime = timedelta(hours=8)
 mail = Mail(app)
